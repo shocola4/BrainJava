@@ -20,9 +20,9 @@ class JDBC_Update {
             
             //DB SQL 작업
             stmt=conn.createStatement();
-            int changeRecord =stmt.executeUpdate("update person " + 
-            		"set age=23" + 
-            		" where jumincd= '7803101574311' ;");
+            String sql = "update person set age = 20";
+            int changeRecord = stmt.executeUpdate(sql);
+            
             		 
             	
             //4단계:DB연결을 종료한다.
