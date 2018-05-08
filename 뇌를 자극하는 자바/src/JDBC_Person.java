@@ -52,7 +52,7 @@
 	class JDBC_Person {
 	   public static void main(String args[]) {
 		   
-		   Person[] persons= new Person[3];
+		   Person[] persons= new Person[3];//  배열객체 
 		   
 		   for(int i=0; i<persons.length; i++) {
 			   persons[i]=new Person();
@@ -64,13 +64,8 @@
 			System.out.println("성별"+ persons[i].getGender());
 			System.out.println("나이"+ persons[i].getAge());
 		   }*/
-		   
-		   
-		  /* for(int i=0; i<persons.length i++;) {
-			   System .out .println("주민번호.getJumicd");
-		   }*/
 		  
-		   
+				  
 	/*	   Person person;// 레퍼런스 변수 선언
 		   person=new Person();//객체생성 -new 연산자(생성자) 이용
 */		   
@@ -150,10 +145,7 @@
 	            	 System .out. println("나이:" + persons[i].getAge());	
 	            	 System .out. println("======================================");
 	        }
-	    
-	         
-	      
-	            
+      
 	            //System .out. println(jumincd+"---"+pname+"--"+gender+"--"+age);
 	        }
 	        catch (ClassNotFoundException cnfe) {

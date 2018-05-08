@@ -1,0 +1,9 @@
+args[0]
+args[1]
+args[2]
+매개변수 값 처리 입력
+
+실행하고 있는 파일에 오른쪽 마우스 클릭하고
+Run Configurations 들어가서 Arguments매개변수 값만큼 값을 입력
+apply하고 닫는다.
+
