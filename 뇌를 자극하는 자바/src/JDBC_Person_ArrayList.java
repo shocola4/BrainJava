@@ -1,10 +1,9 @@
-
-
-	import java.sql.Connection;
-	import java.sql.DriverManager;
-	import java.sql.SQLException;
-	import java.sql.Statement;
-	import java.sql. ResultSet;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.sql. ResultSet;
 	
 	class Person{
 		String jumincd=null;  
@@ -49,43 +48,12 @@
 		
 	}
 
-	class JDBC_Person {
+	class JDBC_Person_ArrayList {
 	   public static void main(String args[]) {
-		   
-		   Person[] persons= new Person[3];//  배열객체 
-		   
-		   for(int i=0; i<persons.length; i++) {
-			   persons[i]=new Person();
-		   }
-		   
-	/*	   for(int i=0; i<persons.length; i++) {
-			System.out.println("주민번호"+ persons[i].getJumincd());
-			System.out.println("이름"+ persons[i].getPname());
-			System.out.println("성별"+ persons[i].getGender());
-			System.out.println("나이"+ persons[i].getAge());
-		   }*/
-		  
-				  
-	/*	   Person person;// 레퍼런스 변수 선언
-		   person=new Person();//객체생성 -new 연산자(생성자) 이용
-*/		   
-		   //person 객체에 맴버필드 셋팅
-		/*   person.setJumincd("800511-1574310");
-		   person.setPname("홍길동");
-		   person.setGender("남자");
-		   person.setAge(20);*/
-		   
-		/*int age= person.getAge();
-		System.out.print( age);
-		   
-		System.out.print( person.getAge());*/
-		   
-		  /* System.out.println("person.jumincd");
-		   System.out.println("person.pname");
-		   System.out.println("person.gender");
-		   System.out.println("person.age");*/
-	   
-		   
+		   		   
+			ArrayList<Person>listPerson=new ArrayList<Person>();
+		
+		 		   
 	    	////////JDBC 연결문 시작/////////
 	    	//1단계:DB 연결을 위한 커넥션 인터페이스
 	        Connection conn = null;
@@ -115,44 +83,38 @@
 	            			
 	            
 	            System .out. println("주민번호 이름 성별 나이");
-	            int i=0;
+	      
 	            while(rs.next()) {
+	            	//Person person;
+	            	//person=new Person();
+	            	Person person=new Person();
 	            	
-	            persons[i].setJumincd(rs.getString(1));
-	            persons[i].setPname(rs.getString(2));
-	            persons[i].setGender(rs.getString(3));
-	            persons[i].setAge(rs.getInt(4));
-	            
-	            i++;
-	            /* jumincd= rs.getString(1);//rs.getString(jumincd);
-	             pname= rs .getString(2);//rs.getString("pname");
-	            gender= rs .getString(3);//rs.getString("gender");
-	             age = rs.getInt(4);//rs.getInt("age");
-	            
-	            System .out. println(jumincd+"---"+pname+"--"+gender+"--"+age);*/
-	            }
-	            
+	            	person.setJumincd(rs.getString(1));// person.setGender(rs.getString("jumincd"));
+	            	person.setPname(rs.getString(2));// person.setGender(rs.getString("pname"));
+	 	            person.setGender(rs.getString(3));// person.setGender(rs.getString("gender"));
+	 	            person.setAge(rs.getInt(4));
+	 	            
+	 	            listPerson.add(person);
+	            	
+	            }      
 	            //4단계:DB연결을 종료한다.
 	            conn.close();
 	           
 	            System .out. println("======================================");
 	            
-	            for( i=0; i<persons.length; i++) {
-	            	
-	            	 System .out. println("주민번호:" + persons[i].getJumincd());	
-	            	 System .out. println("이름:" + persons[i].getPname());
-	            	 System .out. println( "성별:" +persons[i].getGender());	
-	            	 System .out. println("나이:" + persons[i].getAge());	
-	            	 System .out. println("======================================");
+	          for(int i=0; i<listPerson.size();i++) {
+	        		System .out.println(listPerson.get(i).getJumincd()+"  ");
+	        		System .out.println(listPerson.get(i).getPname()+"  ");
+	        		System .out.println(listPerson.get(i).getGender()+"    ");
+	        		System .out.println(listPerson.get(i).getAge()+"      ");
+	        		System .out.println();
+	          }
+	          
+	          
+	          
 	        }
-      
-	            //System .out. println(jumincd+"---"+pname+"--"+gender+"--"+age);
-	        }
-	        /*catch (ArrayIndexOutOfBoundsException arr) {
-	            System.out.println("해당 클래스를 찾을 수 없습니다." + 
-	                               cnfe.getMessage());
-	        }
-	        */
+	    
+	        
 	        catch (ClassNotFoundException cnfe) {
 	            System.out.println("해당 클래스를 찾을 수 없습니다." + 
 	                               cnfe.getMessage());
