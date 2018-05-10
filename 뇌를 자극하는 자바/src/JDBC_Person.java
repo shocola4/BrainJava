@@ -107,7 +107,6 @@
 	               "jdbc:mysql://localhost:3307/mysql", "root", "12345");
 	            System.out.println("데이터베이스에 접속했습니다.");
 	            
-	            
 	            //커넥션 객체가 Statement객체를 생성
 	            stmt=conn.createStatement();
 	            //DML SQL쿼리 실행후 결과를 저장
