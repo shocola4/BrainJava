@@ -7,7 +7,7 @@ public class Exercise9_2 {
 		String str1="Java Programing";
 		//int index= str1 .indexOf("a");//1번째인덱스
 		//int index= str1 .indexOf("a",2);//2번째인덱스
-		//int index= str1 .indexOf("a",3);//3번째인덱스
+		//int index= str1 .indexOf("a",3);//3번째인덱스.
 
 		int index=str1.lastIndexOf('a');
 		

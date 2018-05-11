@@ -7,7 +7,7 @@ public class StringExample6 {
 		System.out.println(str.substring(3));
 		System.out.println(str.substring(3,7));
 
-		
+		//디버깅으로 확인
 
 	}
 

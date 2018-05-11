@@ -26,7 +26,7 @@ int day=obj.get(java.util.Calendar.DAY_OF_MONTH);
 
 */
 /*//문제 import java.util 불려왔을때
-java.util.GregorianCalendar obj= new java.util.GregorianCalendar();
+GregorianCalendar obj= new GregorianCalendar();
 int year =obj.get(java.util.Calendar.YEAR);
 int month =obj.get(java.util.Calendar.MONTH)+1;
 int day=obj.get(java.util.Calendar.DAY_OF_MONTH);

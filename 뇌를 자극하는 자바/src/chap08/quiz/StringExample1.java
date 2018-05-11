@@ -23,7 +23,7 @@ public class StringExample1 {
 		
 		
 /*		String str1="Hello,java";
-		String str2="Hello,java";*/
+		String str2="Hello,java"; */
 		if(str1.equals(str2))
 			System.out.println("같다");
 		else
