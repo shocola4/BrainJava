@@ -9,7 +9,7 @@ public class Exercise9_6 {
 		
 		GregorianCalendar gcalendar=new GregorianCalendar();// 돌리때마다 바뀌는 것을 도와줌
 		//System.out.println(gcalendar.getTimeInMillis());
-		int frontCount=0; int backCount=0;
+		int frontCount=0 , backCount=0;
 		Random random= new Random(gcalendar.getTimeInMillis());
 
 		for(int i=1; i<=10; i++) {
