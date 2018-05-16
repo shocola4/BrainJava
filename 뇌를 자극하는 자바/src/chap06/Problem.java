@@ -1,6 +1,6 @@
 package chap06;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 //class IntClass {
 //	int a,b,c;
@@ -9,20 +9,49 @@ import java.util.Scanner;
 //static int i,j;
 public class Problem {
 	
-	public static void main(String[] args) {
-		int inNum;
-		Scanner scan01=new Scanner(System .in);
-		inNum=scan01.nextInt();
-		if(inNum%2==0) {
-			System.out.printf("%d=짝수입니다.",inNum);
-		}
-		else
-			System.out.printf("%d=홀수입니다.",inNum);
-			scan01.close();
+	public static void main(String[] args)  {
+		char c[] = { '+','-','/','*' };
+		double p;
+		switch (c[3])
+		{
+		case  '+':
+			p = 0;
+			for (int i = 0; i < 5; i++, p += i);
+				break;
+		case  '-':
+			p = 0;
+			for (int i = 0; i < 5; i++, p -= i);
+			break;
+		case  '/':
+			p = 1;
+			for (int i = 0; i < 5; i++, p /= i);
+			break;
+		default:
+			p = 1;
+			for (int i = 0; i < 5; i++, p *= i);
 		
+			break;
+		}
+		System.out.printf("%.3f", p);
 	}
 
 }
+
+//
+//{
+//	int inNum;
+//	Scanner scan01=new Scanner(System .in);
+//	inNum=scan01.nextInt();
+//	if(inNum%2==0) {
+//		System.out.printf("%d=짝수입니다.",inNum);
+//	}
+//	else
+//		System.out.printf("%d=홀수입니다.",inNum);
+//		scan01.close();
+//	
+//}
+
+
 //
 //{
 //	int a,b=10;
