@@ -17,7 +17,9 @@ public class Rectangle implements Transformable {
     	 this.y=y;
      }
      public void moveBy(int xOffset,int yOffset) {
-    	 
+    	 this.x+=xOffset;
+    	 this.y+=yOffset;
+
      }
 
 }
