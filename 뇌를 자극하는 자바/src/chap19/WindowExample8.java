@@ -3,7 +3,7 @@ package chap19;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.sql.SQLException;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,6 +21,7 @@ import com.kosea.kmove30.JDBC_Manager;
 
 		public static void main(String[] args) {
 			
+		//DB관리(연결, 조회,삭제,추가 클래스)
 			JDBC_Manager jdbcManager =new JDBC_Manager();
 			
 			JFrame frame = new JFrame("연락처 프로그램");
@@ -37,24 +38,33 @@ import com.kosea.kmove30.JDBC_Manager;
 			JTextField text1 = new JTextField(3);
 			JTextField text2 = new JTextField(3);
 			JTextField text3 = new JTextField(2);
+			
 			JButton selectBtn = new JButton("조회");
 			JButton button1 = new JButton("추가");
 			JButton button2 = new JButton("삭제");
+			
 			panel.add(new JLabel("이름"));
 			panel.add(text1);
 			panel.add(new JLabel("나이"));
 			panel.add(text2);
 			panel.add(new JLabel("성별"));
 			panel.add(text3);
+			
+			panel.add( selectBtn);
 			panel.add(button1);
 			panel.add(button2);
 			contentPane.add(panel,BorderLayout.SOUTH);
+			
+
+	        // 조회버튼 이벤트리스너 등록(기능 )
+	        //selectBtn.addActionListener(null);
+			selectBtn.addActionListener(new SelectActionListener(jdbcManager,table) );
 			button1.addActionListener(
 					new AddActionListener(table,text1,text2,text3)
 					);
-			button2.addActionListener(new RemoveActionListener(table));
+			button2.addActionListener(new RemoveActionListener(jdbcManager,table));
 			
-			//selectBtn.addActionListener(SelelctActionListener );
+			
 			
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.pack();
