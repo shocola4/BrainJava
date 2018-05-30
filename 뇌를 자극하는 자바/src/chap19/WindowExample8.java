@@ -56,7 +56,20 @@ import com.kosea.kmove30.JDBC_Manager;
 			panel.add(updateBtn);
 			panel.add(button2);
 			contentPane.add(panel,BorderLayout.SOUTH);
+<<<<<<< HEAD
+=======
 			
+
+	        // 조회버튼 이벤트리스너 등록(기능 )
+	        //selectBtn.addActionListener(null);
+			selectBtn.addActionListener(new SelectActionListener(jdbcManager,table) );
+			button1.addActionListener(
+					new AddActionListener(table,text1,text2,text3)
+					);
+			button2.addActionListener(new RemoveActionListener(jdbcManager,table));
+>>>>>>> refs/remotes/origin/master_new
+			
+<<<<<<< HEAD
 
 	        // 조회버튼 이벤트리스너 등록(기능 )
 	        table.addMouseListener(new MyMouseListener());
@@ -66,6 +79,8 @@ import com.kosea.kmove30.JDBC_Manager;
 					
 			button2.addActionListener(new RemoveActionListener(jdbcManager,table));
 			
+=======
+>>>>>>> refs/remotes/origin/master_new
 			
 			
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
