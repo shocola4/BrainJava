@@ -47,10 +47,13 @@ public class JDBC_Manager {
 	//query-"INSERT INTO person ( pname,age,gender)  values('홍길동',41,'m')";
 	public void insertTable(String []arr)throws Exception {
 		
-		String name = arr[0];
-		String age = arr[1];
-		String gender = arr[2];
-		
+		String name = arr[0];//이름
+		String age = arr[1];//나이
+		String gender = arr[2];//성별
+
+		//콤보박스에'남'을 선택하면 ->"m"
+		//          '여'을 선택하면->"f"
+		gender=gender.equals("남")?"m":"f";
 		  String query= "INSERT INTO  person  (	pname,age,	gender)values"
 		  		+ "('"+ name +"',"+age+",'"+gender+"'"+")";
 //        		   sql+= VALUES ('7803101574311'	,	'홍길동'	,	'm'	,	41);,
@@ -67,10 +70,12 @@ public class JDBC_Manager {
 	
 	//query-"update person set age=42 where pname='홍길동'";
 	public void updateTable(String name,String age)throws Exception {
-		String query ="update person set age="+age+ 
-			"where pname='"+name+"'";
+		String query ="update person set age = " + age + 
+				" where pname = '" + name + "'";
+		  System.out.println("query - " + query);
 		stmt=conn.createStatement();
 		int updateCount = stmt.executeUpdate(query);
+		
 		if (updateCount >0) {
 			System.out.println(updateCount +"건이 수정 되었습니다.");
 		}
