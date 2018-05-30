@@ -65,6 +65,19 @@ public class JDBC_Manager {
 		  System.out.println(insertCount+ "건이 삽입 되었습니다.");
 	}	  
 	
+	//query-"update person set age=42 where pname='홍길동'";
+	public void updateTable(String name,String age)throws Exception {
+		String query ="update person set age="+age+ 
+			"where pname='"+name+"'";
+		stmt=conn.createStatement();
+		int updateCount = stmt.executeUpdate(query);
+		if (updateCount >0) {
+			System.out.println(updateCount +"건이 수정 되었습니다.");
+		}
+	}
+	
+	
+	
 	//query-"delete from person where pname ='홍길동'";
 	public void deleteTable(String deleteName)throws Exception {
 		String query ="delete from person where pname ='"+deleteName+"'";
