@@ -1,6 +1,5 @@
 package chap19;
 
-
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -18,11 +17,10 @@ import javax.swing.table.DefaultTableModel;
 import com.kosea.kmove30.JDBC_Manager;
 
 
-public class WindowExample8_2 {
-
-	public static void main(String[] args) {
-		
-		// DB관리(연결, 조회, 삭제, 추가 클래스) 
+class WindowExample8_2 {
+    public static void main(String[] args) {
+    	
+    	// DB관리(연결, 조회, 삭제, 추가 클래스) 
     	JDBC_Manager jdbcManager = new JDBC_Manager();
     	
         JFrame frame = new JFrame("참가자 명단 프로그램");
@@ -68,21 +66,18 @@ public class WindowExample8_2 {
         table.addMouseListener(new MyMouseListener(text1, text2, genderCombox));
         selectBtn.addActionListener(new SelectActionListener(jdbcManager, table));
         button1.addActionListener(new AddActionListener(jdbcManager, table, text1, text2, genderCombox));
-        updateBtn.addActionListener(new UpdateActionListener(jdbcManager,table, text1, text2));
+        updateBtn.addActionListener(new UpdateActionListener(jdbcManager, table, text1, text2));
         button2.addActionListener(new RemoveActionListener(jdbcManager, table));
-        
-              
+                    
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         
         System.out.println("프로그램 시작");
-        
-        
-        
+
         try {
         	
-        	jdbcManager.DBConnection("com.mysql.jdbc.Driver","jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8", "root", "12345");
+        	jdbcManager.DBConnection("com.mysql.jdbc.Driver","jdbc:mysql://localhost:3307/mysql?useUnicode=true&characterEncoding=utf8", "root", "12345");
         	System.out.println("데이터베이스에 접속했습니다.");
         	frame.setTitle("참가자 명단 프로그램 - DB접속 성공");
         	

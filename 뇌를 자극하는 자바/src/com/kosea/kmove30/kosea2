@@ -1,0 +1,12 @@
+select * from perosn;
+
+CREATE TABLE  MEMBER(
+id VARCHAR(50),
+pass varchar(50),
+PRIMARY KEY(id)
+
+);
+INSERT Into member(id,pass)
+VALUES('kosea2','12345');
+
+select * from MEMBER;
