@@ -31,10 +31,10 @@ public class Pro_JDBCExample {
 	             
 	             
 	            // 항목 읽기
-	           driver   = props.getProperty("driver") ;
-	           url      = props.getProperty("url");
-	           username = props.getProperty("username");
-	           password = props.getProperty("password");
+	           driver   = props.getProperty("jdbc.driver") ;
+	           url      = props.getProperty("jdbc.url");
+	           username = props.getProperty("jdbc.username");
+	           password = props.getProperty("jdbc.password");
 
 	          
 	       	             
@@ -56,7 +56,7 @@ public class Pro_JDBCExample {
 	        	
 	            //3단계:드라이버매니져 클래스는 DB를 연결한다.
 	            conn = DriverManager.getConnection(url, username, password);
-	            System.out.println("DB 접속성공");
+	            System.out.println("DB 접속");
 	            //4단계:DB연결을 종료한다.
 	            conn.close();
 	        }
